@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="max-image-preview:large">
-<meta name="description" content="Advogado Criminalista 24h em Boa Vista - RR. Igor Lyniker: defesa penal técnica, habeas corpus, prisões e tribunais superiores. Atendimento imediato.">
-<meta name="keywords" content="advogado criminal, habeas corpus, defesa criminal, Boa Vista, Igor Lyniker, advogado criminalista, tráfico de drogas">
+<meta name="description" content="Advogado Criminalista em Boa Vista - RR. Igor Lyniker: defesa em prisão, tráfico, habeas corpus, revisão criminal e tribunais superiores. Atendimento 24h.">
+<meta name="keywords" content="advogado criminal Boa Vista, habeas corpus Roraima, advogado tráfico de drogas, prisão em flagrante, audiência de custódia, revisão criminal, STJ STF, defesa criminal RR">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Igor Lyniker Assessoria e Advocacia">
-<meta property="og:description" content="Advogado Criminal 24h - Resposta Rápida, Defesa Técnica">
+<meta property="og:title" content="Igor Lyniker - Advogado Criminalista em Boa Vista/RR">
+<meta property="og:description" content="Defesa em prisão, tráfico, habeas corpus e revisão criminal. Atendimento 24h.">
 <meta property="og:type" content="website">
 
-<title>Igor Lyniker Assessoria e Advocacia</title>
+<title>Igor Lyniker - Advogado Criminalista em Boa Vista/RR</title>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome para ícones -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- ====================================================================
-     COLE SEUS PIXELS AQUI
+     COLE SEUS PIXELS AQUI (depois que criar suas contas)
      ==================================================================== -->
-<!-- Meta/Facebook Pixel - SUBSTITUA SEU_PIXEL_ID -->
+<!-- Meta/Facebook Pixel -->
 <!--
 <script>
 !function(f,b,e,v,n,t,s)
@@ -41,7 +41,7 @@ fbq('track', 'PageView');
 </script>
 -->
 
-<!-- Google Analytics - SUBSTITUA G-SEU_ID -->
+<!-- Google Analytics -->
 <!--
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_ID"></script>
 <script>
@@ -53,14 +53,7 @@ gtag('config', 'G-SEU_ID');
 -->
 
 <style>
-/* =====================================================================
-   RESET & VARIÁVEIS
-   ===================================================================== */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --black: #0a0a0a;
@@ -70,24 +63,19 @@ gtag('config', 'G-SEU_ID');
     --gold-light: #e0c896;
     --gold-dark: #a8895a;
     --red: #d62828;
-    --red-bright: #e63946;
     --green: #25d366;
     --green-dark: #128c4a;
     --white: #ffffff;
     --gray: #cccccc;
     --gray-dark: #888888;
     --border: rgba(201, 169, 110, 0.2);
-    
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
-    
     --container: 1200px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
@@ -98,15 +86,8 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
 
 .container {
     max-width: var(--container);
@@ -114,9 +95,7 @@ a {
     padding: 0 24px;
 }
 
-/* =====================================================================
-   BARRA VERMELHA SCROLL INFINITO (TOPO)
-   ===================================================================== */
+/* === BARRA VERMELHA SCROLL === */
 .scroll-banner {
     position: fixed;
     top: 0;
@@ -139,7 +118,6 @@ a {
 .scroll-item {
     display: inline-flex;
     align-items: center;
-    font-family: var(--font-body);
     font-weight: 800;
     font-size: 14px;
     letter-spacing: 2px;
@@ -151,7 +129,6 @@ a {
 .scroll-item::after {
     content: "•";
     margin-left: 40px;
-    color: var(--white);
     opacity: 0.7;
 }
 
@@ -160,16 +137,13 @@ a {
     to { transform: translateX(-50%); }
 }
 
-/* =====================================================================
-   BOTÃO CTA WHATSAPP (VERDE)
-   ===================================================================== */
+/* === BOTÃO WHATSAPP === */
 .btn-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 12px;
     background: var(--green);
     color: var(--white);
-    font-family: var(--font-body);
     font-weight: 700;
     font-size: 17px;
     padding: 18px 40px;
@@ -193,9 +167,7 @@ a {
     transition: left 0.6s;
 }
 
-.btn-whatsapp:hover::before {
-    left: 100%;
-}
+.btn-whatsapp:hover::before { left: 100%; }
 
 .btn-whatsapp:hover {
     background: var(--green-dark);
@@ -203,17 +175,13 @@ a {
     box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
 }
 
-.btn-whatsapp i {
-    font-size: 22px;
-}
+.btn-whatsapp i { font-size: 22px; }
 
-/* =====================================================================
-   HERO SECTION
-   ===================================================================== */
+/* === HERO === */
 .hero {
     min-height: 100vh;
     padding-top: 80px;
-    background: 
+    background:
         linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.92) 100%),
         url('hero-bg.jpg') center center / cover no-repeat,
         var(--black);
@@ -229,18 +197,9 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    background: 
-        radial-gradient(ellipse at 50% 100%, rgba(10, 10, 10, 0.9) 0%, transparent 60%),
-        radial-gradient(ellipse at 50% 0%, rgba(10, 10, 10, 0.7) 0%, transparent 50%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(10, 10, 10, 0.4) 100%);
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(10,10,10,0.9) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 0%, rgba(10,10,10,0.7) 0%, transparent 50%);
     z-index: 1;
     pointer-events: none;
 }
@@ -262,62 +221,51 @@ a {
 .hero-logo-img {
     max-width: 480px;
     width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.15));
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.15));
 }
 
 .hero h1 {
     font-family: var(--font-display);
-    font-size: clamp(28px, 4.5vw, 44px);
+    font-size: clamp(30px, 4.5vw, 48px);
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: var(--white);
     animation: fadeInUp 1s ease 0.3s both;
 }
 
-.hero h1 span {
+.hero h1 span { color: var(--gold); }
+
+.hero-location {
+    font-size: 14px;
     color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 600;
+    animation: fadeInUp 1s ease 0.4s both;
 }
 
-.hero-subtitle {
-    font-size: clamp(15px, 1.6vw, 17px);
+.hero-services-list {
+    font-size: clamp(15px, 1.6vw, 18px);
     color: var(--gray);
     margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
     font-weight: 300;
     line-height: 1.7;
     animation: fadeInUp 1s ease 0.5s both;
 }
 
-.hero .btn-whatsapp {
-    animation: fadeInUp 1s ease 0.7s both;
-}
+.hero-services-list strong { color: var(--gold-light); font-weight: 500; }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.hero .btn-whatsapp { animation: fadeInUp 1s ease 0.7s both; }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-/* =====================================================================
-   SEÇÃO TÍTULOS
-   ===================================================================== */
-.section {
-    padding: 100px 0;
-    position: relative;
-}
+/* === SEÇÕES === */
+.section { padding: 90px 0; position: relative; }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 70px;
-}
+.section-header { text-align: center; margin-bottom: 60px; }
 
 .section-tag {
     display: inline-block;
@@ -352,10 +300,7 @@ a {
     margin-bottom: 20px;
 }
 
-.section-title span {
-    color: var(--gold);
-    font-style: italic;
-}
+.section-title span { color: var(--gold); font-style: italic; }
 
 .section-subtitle {
     color: var(--gray);
@@ -365,98 +310,189 @@ a {
     font-weight: 300;
 }
 
-/* =====================================================================
-   SEÇÃO SERVIÇOS
-   ===================================================================== */
-.services {
-    background: var(--dark);
+/* === SEÇÃO URGENTE (Casos urgentes) === */
+.urgent {
+    background: linear-gradient(135deg, var(--dark) 0%, #1a0808 100%);
     position: relative;
+    border-top: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
 }
 
-.services::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0.5;
+.urgent-banner {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.services-grid {
+.urgent-banner i {
+    font-size: 48px;
+    color: var(--red);
+    margin-bottom: 16px;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.urgent-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--white);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.urgent-title span { color: var(--red); }
+
+.urgent-subtitle {
+    color: var(--gray);
+    font-size: 17px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.urgent-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
 }
 
-.service-card {
+.urgent-card {
+    background: rgba(20,20,20,0.6);
+    border: 1px solid rgba(214, 40, 40, 0.3);
+    padding: 24px 20px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.urgent-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+    background: rgba(214, 40, 40, 0.08);
+}
+
+.urgent-card i {
+    font-size: 28px;
+    color: var(--red);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.urgent-card h4 {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: var(--font-body);
+}
+
+.urgent-card p {
+    color: var(--gray-dark);
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.urgent-cta {
+    text-align: center;
+    background: rgba(214, 40, 40, 0.1);
+    border: 1px solid var(--red);
+    padding: 30px;
+    border-radius: 4px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.urgent-cta p {
+    color: var(--white);
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* === SERVIÇOS DETALHADOS === */
+.services-detail {
+    background: var(--dark);
+}
+
+.service-block {
+    margin-bottom: 60px;
+    padding: 50px 40px;
     background: linear-gradient(145deg, var(--dark-2) 0%, rgba(20,20,20,0.5) 100%);
     border: 1px solid var(--border);
-    padding: 40px 32px;
     border-radius: 4px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    border-left: 3px solid var(--gold);
+    transition: transform var(--transition);
 }
 
-.service-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--gold);
-    transition: height 0.4s ease;
+.service-block:hover { transform: translateX(8px); }
+.service-block:last-child { margin-bottom: 0; }
+
+.service-block-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
-.service-card:hover::before {
-    height: 100%;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold);
-    box-shadow: 0 20px 50px rgba(201, 169, 110, 0.1);
-}
-
-.service-icon {
-    width: 60px;
-    height: 60px;
+.service-block-icon {
+    width: 56px;
+    height: 56px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
     color: var(--black);
-    font-size: 24px;
-}
-
-.service-card h3 {
-    font-family: var(--font-display);
     font-size: 22px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 16px;
-    line-height: 1.3;
+    flex-shrink: 0;
 }
 
-.service-card p {
+.service-block h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.service-block-content {
     color: var(--gray);
-    font-size: 14.5px;
-    line-height: 1.7;
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 24px;
     font-weight: 300;
 }
 
-/* =====================================================================
-   SEÇÃO SOBRE
-   ===================================================================== */
-.about {
-    background: var(--black);
-    overflow: hidden;
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
+.service-tag {
+    background: rgba(201, 169, 110, 0.1);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    color: var(--gold-light);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all var(--transition);
+}
+
+.service-tag:hover {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+/* === SOBRE === */
+.about { background: var(--black); }
 
 .about-grid {
     display: grid;
@@ -465,9 +501,7 @@ a {
     align-items: center;
 }
 
-.about-image {
-    position: relative;
-}
+.about-image { position: relative; }
 
 .about-image-wrapper {
     position: relative;
@@ -483,13 +517,10 @@ a {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    display: block;
     transition: transform 0.6s ease;
 }
 
-.about-image-wrapper:hover img {
-    transform: scale(1.03);
-}
+.about-image-wrapper:hover img { transform: scale(1.03); }
 
 .about-image-wrapper::after {
     content: "";
@@ -520,30 +551,54 @@ a {
     padding-right: 30px;
 }
 
-.about-content .section-tag::before {
-    display: none;
-}
+.about-content .section-tag::before { display: none; }
 
 .about-text {
     color: var(--gray);
     font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-weight: 300;
 }
+
+.about-highlights {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.about-highlights li {
+    color: var(--gray);
+    padding: 12px 0 12px 32px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-highlights li:last-child { border-bottom: none; }
+
+.about-highlights li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.about-highlights strong { color: var(--white); }
 
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 40px;
-    padding-top: 40px;
+    margin-top: 30px;
+    padding-top: 30px;
     border-top: 1px solid var(--border);
 }
 
-.stat-item {
-    text-align: center;
-}
+.stat-item { text-align: center; }
 
 .stat-number {
     font-family: var(--font-display);
@@ -561,67 +616,24 @@ a {
     letter-spacing: 1.5px;
 }
 
-/* =====================================================================
-   SEÇÃO POR QUE ESCOLHER
-   ===================================================================== */
-.why {
-    background: var(--dark);
-    position: relative;
-}
+/* === DEPOIMENTOS === */
+.testimonials { background: var(--dark); }
 
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.why-item {
+.testimonials-disclaimer {
+    background: rgba(201, 169, 110, 0.08);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 40px auto 0;
+    max-width: 800px;
+    border-radius: 4px;
     text-align: center;
-    padding: 30px 20px;
-    transition: transform var(--transition);
 }
 
-.why-item:hover {
-    transform: translateY(-5px);
-}
-
-.why-number {
-    font-family: var(--font-display);
-    font-size: 56px;
-    font-weight: 300;
-    color: var(--gold);
+.testimonials-disclaimer p {
+    color: var(--gold-light);
+    font-size: 13px;
     font-style: italic;
-    line-height: 1;
-    margin-bottom: 20px;
-    opacity: 0.5;
-}
-
-.why-item h4 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 12px;
-    line-height: 1.3;
-}
-
-.why-item p {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.6;
     font-weight: 300;
-}
-
-.why-cta {
-    text-align: center;
-}
-
-/* =====================================================================
-   SEÇÃO DEPOIMENTOS
-   ===================================================================== */
-.testimonials {
-    background: var(--black);
 }
 
 .testimonials-grid {
@@ -704,42 +716,86 @@ a {
     font-size: 12px;
 }
 
-/* =====================================================================
-   SEÇÃO CTA FINAL
-   ===================================================================== */
+/* === FAQ === */
+.faq { background: var(--black); }
+
+.faq-grid {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all var(--transition);
+}
+
+.faq-item:hover { border-color: var(--gold); }
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    padding: 22px 28px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.faq-question:hover { color: var(--gold); }
+
+.faq-question i {
+    color: var(--gold);
+    font-size: 14px;
+    transition: transform var(--transition);
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 28px;
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 28px 24px;
+}
+
+/* === CTA FINAL === */
 .cta-final {
-    background: 
+    background:
         linear-gradient(135deg, rgba(10,10,10,0.95), rgba(20,20,20,0.95)),
-        radial-gradient(ellipse at center, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+        radial-gradient(ellipse at center, rgba(201,169,110,0.15) 0%, transparent 70%);
     text-align: center;
-    padding: 120px 0;
+    padding: 100px 0;
     position: relative;
     overflow: hidden;
-}
-
-.cta-final::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.cta-final::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .cta-final h2 {
     font-family: var(--font-display);
-    font-size: clamp(26px, 3.5vw, 38px);
+    font-size: clamp(28px, 4vw, 42px);
     font-weight: 500;
     color: var(--white);
     max-width: 900px;
@@ -747,10 +803,7 @@ a {
     line-height: 1.3;
 }
 
-.cta-final h2 span {
-    color: var(--gold);
-    font-style: italic;
-}
+.cta-final h2 span { color: var(--gold); font-style: italic; }
 
 .cta-final p {
     color: var(--gray);
@@ -761,54 +814,24 @@ a {
     line-height: 1.7;
 }
 
-/* =====================================================================
-   FOOTER
-   ===================================================================== */
+/* === FOOTER === */
 .footer {
     background: var(--dark);
     border-top: 1px solid var(--border);
-    padding: 80px 0 30px;
+    padding: 70px 0 30px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
     gap: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .footer-brand .footer-logo-img {
     max-width: 280px;
-    width: 100%;
-    height: auto;
     margin-bottom: 24px;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
-}
-
-.footer-brand .logo-text {
-    font-family: var(--font-display);
-    font-style: italic;
-    color: var(--gold);
-    font-size: 38px;
-    margin-bottom: 6px;
-    line-height: 1;
-}
-
-.footer-brand h3 {
-    font-family: var(--font-display);
-    font-size: 24px;
-    color: var(--white);
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 4px;
-}
-
-.footer-brand .sub-brand {
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
 }
 
 .footer-brand p {
@@ -848,14 +871,8 @@ a {
     width: 18px;
 }
 
-.footer-contact a {
-    color: var(--gray);
-    transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-    color: var(--gold);
-}
+.footer-contact a { transition: color var(--transition); }
+.footer-contact a:hover { color: var(--gold); }
 
 .footer-social {
     display: flex;
@@ -883,6 +900,23 @@ a {
     transform: translateY(-3px);
 }
 
+.footer-disclaimer {
+    background: rgba(201, 169, 110, 0.05);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer-disclaimer p {
+    color: var(--gray-dark);
+    font-size: 12px;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 300;
+}
+
 .footer-bottom {
     border-top: 1px solid var(--border);
     padding-top: 30px;
@@ -892,9 +926,144 @@ a {
     font-weight: 300;
 }
 
-/* =====================================================================
-   BOTÃO WHATSAPP FLUTUANTE
-   ===================================================================== */
+/* === LOCALIZAÇÃO === */
+.location {
+    background: var(--dark);
+    padding: 90px 0;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+    align-items: stretch;
+}
+
+.location-info {
+    background: linear-gradient(145deg, var(--dark-2) 0%, rgba(20,20,20,0.5) 100%);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-info-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.location-info h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.location-info .location-address {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.location-info .location-address strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.location-hours {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-bottom: 30px;
+}
+
+.location-hours h4 {
+    color: var(--gold);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.location-hours p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.location-hours p strong { color: var(--white); }
+
+.btn-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--transition);
+    align-self: flex-start;
+}
+
+.btn-directions:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.btn-directions i { font-size: 16px; }
+
+.location-map {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    min-height: 400px;
+    background: var(--dark-2);
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: 0;
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.95) contrast(0.85);
+}
+
+@media (max-width: 992px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .location-map { min-height: 350px; }
+    .location-map iframe { min-height: 350px; }
+}
+
+@media (max-width: 768px) {
+    .location { padding: 60px 0; }
+    .location-info { padding: 32px 24px; }
+    .location-info h3 { font-size: 24px; }
+}
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -920,111 +1089,55 @@ a {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 20px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0); }
+    0% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.7); }
+    70% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 20px rgba(37,211,102,0); }
+    100% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0); }
 }
 
-/* =====================================================================
-   RESPONSIVO
-   ===================================================================== */
+/* === RESPONSIVO === */
 @media (max-width: 992px) {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
-    
-    .about-image {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-    }
+    .about-image { max-width: 400px; margin: 0 auto; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
-    .section {
-        padding: 70px 0;
-    }
-    
-    .hero {
-        padding-top: 80px;
-        min-height: 100vh;
-    }
-    
-    .hero-logo-img {
-        max-width: 340px;
-    }
-    
-    .footer-brand .footer-logo-img {
-        max-width: 240px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .scroll-item {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-    }
-    
-    .btn-whatsapp {
-        font-size: 15px;
-        padding: 16px 32px;
-    }
-    
+    .section { padding: 60px 0; }
+    .hero { padding-top: 80px; }
+    .hero-logo-img { max-width: 340px; }
+    .scroll-item { font-size: 11px; letter-spacing: 1.5px; }
+    .btn-whatsapp { font-size: 15px; padding: 16px 28px; }
+    .service-block { padding: 36px 24px; }
+    .service-block h3 { font-size: 22px; }
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
     }
-    
-    .footer-brand p {
-        margin: 0 auto;
-    }
-    
-    .footer-social {
-        justify-content: center;
-    }
-    
-    .footer-contact li {
-        justify-content: center;
-        text-align: left;
-    }
-    
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
-        bottom: 20px;
-        right: 20px;
-    }
+    .footer-brand p { margin: 0 auto; }
+    .footer-brand .footer-logo-img { margin-left: auto; margin-right: auto; max-width: 240px; }
+    .footer-social { justify-content: center; }
+    .footer-contact li { justify-content: center; text-align: left; }
+    .about-stats { grid-template-columns: 1fr; gap: 20px; }
+    .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 20px; right: 20px; }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 16px;
-    }
-    
-    .service-card,
-    .testimonial-card {
-        padding: 28px 24px;
-    }
+    .container { padding: 0 16px; }
+    .service-block { padding: 28px 20px; }
+    .testimonial-card { padding: 28px 24px; }
+    .faq-question { font-size: 14.5px; padding: 18px 20px; }
+    .faq-item.active .faq-answer { padding: 0 20px 20px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =====================================================================
-     BARRA VERMELHA SCROLL INFINITO
-     ===================================================================== -->
+<!-- BARRA VERMELHA -->
 <div class="scroll-banner">
     <div class="scroll-track">
         <span class="scroll-item">Defesa 24h</span>
@@ -1035,7 +1148,6 @@ a {
         <span class="scroll-item">Atendimento Imediato</span>
         <span class="scroll-item">Defesa 24h</span>
         <span class="scroll-item">Atendimento Imediato</span>
-        <!-- Duplicado para loop perfeito -->
         <span class="scroll-item">Defesa 24h</span>
         <span class="scroll-item">Atendimento Imediato</span>
         <span class="scroll-item">Defesa 24h</span>
@@ -1047,83 +1159,174 @@ a {
     </div>
 </div>
 
-<!-- =====================================================================
-     HERO SECTION
-     ===================================================================== -->
+<!-- ===== HERO - TOPO FORTE ===== -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-logo">
-            <img src="logo.png" alt="Dr. Igor Lyniker - Advogado Criminalista" class="hero-logo-img">
+            <img src="logo.png" alt="Dr. Igor Lyniker - Advogado Criminalista">
         </div>
-        
-        <h1>Advogado Criminal <span>24h</span> – Resposta Rápida, Defesa Técnica</h1>
-        <p class="hero-subtitle">Mais de 8 anos de atuação em defesa penal, sempre ao lado de quem enfrenta momentos difíceis com a justiça.</p>
-        
-        <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista" 
-           class="btn-whatsapp" 
-           target="_blank"
-           rel="noopener"
-           onclick="trackWhatsApp('hero')">
+
+        <div class="hero-location"><i class="fas fa-map-marker-alt"></i> Boa Vista – Roraima</div>
+
+        <h1>Advogado Criminalista em <span>Boa Vista/RR</span></h1>
+
+        <p class="hero-services-list">
+            Atuação especializada em <strong>prisão, tráfico, habeas corpus</strong> e <strong>revisão criminal</strong>.<br>
+            Defesa técnica em todas as fases do processo penal — inclusive nos tribunais superiores.
+        </p>
+
+        <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
+           class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('hero')">
             <i class="fab fa-whatsapp"></i>
-            Falar com especialista
+            Falar com o advogado agora
         </a>
     </div>
 </section>
 
-<!-- =====================================================================
-     SEÇÃO SERVIÇOS
-     ===================================================================== -->
-<section class="section services">
+<!-- ===== CASOS URGENTES ===== -->
+<section class="section urgent">
+    <div class="container">
+        <div class="urgent-banner">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2 class="urgent-title">Caso <span>URGENTE?</span></h2>
+            <p class="urgent-subtitle">Situações que exigem atuação imediata de um advogado criminalista. Cada hora conta.</p>
+        </div>
+
+        <div class="urgent-grid">
+            <div class="urgent-card">
+                <i class="fas fa-handcuffs"></i>
+                <h4>Prisão em Flagrante</h4>
+                <p>Acompanhamento imediato após a prisão</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-building-shield"></i>
+                <h4>Delegacia</h4>
+                <p>Presença na hora do depoimento</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-gavel"></i>
+                <h4>Audiência de Custódia</h4>
+                <p>Defesa nas primeiras 24h após prisão</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-unlock-alt"></i>
+                <h4>Liberdade Provisória</h4>
+                <p>Pedidos de soltura e revogação</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-pills"></i>
+                <h4>Tráfico de Drogas</h4>
+                <p>Defesa técnica especializada</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-shield-halved"></i>
+                <h4>Defesa Técnica</h4>
+                <p>Atuação estratégica desde o início</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-magnifying-glass"></i>
+                <h4>Busca Ilegal</h4>
+                <p>Combate a provas obtidas ilegalmente</p>
+            </div>
+            <div class="urgent-card">
+                <i class="fas fa-user-shield"></i>
+                <h4>Abordagem Policial</h4>
+                <p>Questionamento de abusos e ilegalidades</p>
+            </div>
+        </div>
+
+        <div class="urgent-cta">
+            <p><strong>Você ou um familiar está numa dessas situações?</strong><br>Não perca tempo. Fale agora.</p>
+            <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20tenho%20um%20caso%20URGENTE,%20preciso%20de%20um%20advogado%20criminalista"
+               class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('urgent')">
+                <i class="fab fa-whatsapp"></i>
+                Atendimento de Emergência
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVIÇOS DETALHADOS ===== -->
+<section class="section services-detail">
     <div class="container">
         <div class="section-header">
-            <div class="section-tag">Nossos Serviços</div>
-            <h2 class="section-title">Como podemos <span>te ajudar?</span></h2>
-            <p class="section-subtitle">Atuação especializada e estratégica em todas as áreas do direito criminal</p>
+            <div class="section-tag">Áreas de Atuação</div>
+            <h2 class="section-title">Como podemos <span>te ajudar</span></h2>
+            <p class="section-subtitle">Atuação completa e estratégica em todas as áreas do direito criminal</p>
         </div>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
-                <h3>Habeas Corpus e Prisões Ilegais</h3>
-                <p>Atuação ágil em pedidos de habeas corpus, com fundamentação técnica contra prisões indevidas e arbitrárias. Defesa 24h com foco na liberdade.</p>
+
+        <div class="service-block">
+            <div class="service-block-header">
+                <div class="service-block-icon"><i class="fas fa-balance-scale"></i></div>
+                <h3>Habeas Corpus e Prisão Preventiva</h3>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-unlock"></i></div>
-                <h3>Prisão Preventiva e Liberdade Provisória</h3>
-                <p>Análise jurídica minuciosa para revogar prisões preventivas sem base legal e garantir liberdade provisória sempre que possível.</p>
+            <p class="service-block-content">
+                Atuação ágil em pedidos de habeas corpus, com fundamentação técnica contra prisões indevidas e arbitrárias.
+                Análise minuciosa para identificar ilegalidades e construir a melhor estratégia de defesa pela liberdade do cliente.
+            </p>
+            <div class="service-tags">
+                <span class="service-tag">Revogação</span>
+                <span class="service-tag">Relaxamento</span>
+                <span class="service-tag">Excesso de prazo</span>
+                <span class="service-tag">Ilegalidades</span>
+                <span class="service-tag">Liberdade provisória</span>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-gavel"></i></div>
-                <h3>Audiência de Custódia e Prisão em Flagrante</h3>
-                <p>Presença do advogado nas primeiras horas após a prisão. Defesa técnica contra abusos e proteção dos direitos do cliente desde o início.</p>
+        </div>
+
+        <div class="service-block">
+            <div class="service-block-header">
+                <div class="service-block-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Defesa em Processo Criminal</h3>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-                <h3>Defesa em Processos Criminais</h3>
-                <p>Estratégia de defesa personalizada, produção de provas e sustentação oral em todas as fases do processo penal.</p>
+            <p class="service-block-content">
+                Estratégia de defesa personalizada em todas as fases do processo penal: do inquérito policial à ação penal,
+                com produção de provas, sustentação oral nas audiências e interposição de recursos quando necessário.
+            </p>
+            <div class="service-tags">
+                <span class="service-tag">Inquérito</span>
+                <span class="service-tag">Ação penal</span>
+                <span class="service-tag">Audiências</span>
+                <span class="service-tag">Recursos</span>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-redo-alt"></i></div>
-                <h3>Revisão Criminal</h3>
-                <p>Atuação nos tribunais superiores (STJ/STF) para revisar sentenças injustas, penas excessivas ou baseadas em erros jurídicos.</p>
+        </div>
+
+        <div class="service-block">
+            <div class="service-block-header">
+                <div class="service-block-icon"><i class="fas fa-redo-alt"></i></div>
+                <h3>Revisão Criminal e Tribunais Superiores</h3>
             </div>
-            
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <p class="service-block-content">
+                Atuação direta no STJ e STF para revisar sentenças injustas, penas excessivas ou baseadas em erros jurídicos.
+                Protocolamos e acompanhamos pessoalmente recursos especiais e habeas corpus nos tribunais superiores em Brasília.
+            </p>
+            <div class="service-tags">
+                <span class="service-tag">STJ</span>
+                <span class="service-tag">STF</span>
+                <span class="service-tag">Recurso Especial</span>
+                <span class="service-tag">Habeas Corpus</span>
+            </div>
+        </div>
+
+        <div class="service-block">
+            <div class="service-block-header">
+                <div class="service-block-icon"><i class="fas fa-shield-alt"></i></div>
                 <h3>Execução Penal</h3>
-                <p>Pedidos de progressão de regime, livramento condicional e benefícios legais, assegurando cumprimento justo da pena.</p>
+            </div>
+            <p class="service-block-content">
+                Acompanhamento técnico durante o cumprimento da pena, com pedidos de progressão de regime,
+                livramento condicional, remição e defesa em casos de falta grave — garantindo o cumprimento justo da sentença.
+            </p>
+            <div class="service-tags">
+                <span class="service-tag">Progressão</span>
+                <span class="service-tag">Livramento</span>
+                <span class="service-tag">Remição</span>
+                <span class="service-tag">Falta grave</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- =====================================================================
-     SEÇÃO SOBRE
-     ===================================================================== -->
+<!-- ===== SOBRE ===== -->
 <section class="section about">
     <div class="container">
         <div class="about-grid">
@@ -1133,19 +1336,24 @@ a {
                 </div>
                 <div class="about-image-frame"></div>
             </div>
-            
+
             <div class="about-content">
                 <div class="section-tag">Sobre o Profissional</div>
-                <h2 class="section-title">Compromisso com a <span>Liberdade, Técnica e Respeito</span></h2>
-                
+                <h2 class="section-title">Conheça o <span>Dr. Igor Lyniker</span></h2>
+
                 <p class="about-text">
-                    Sou <strong style="color: var(--gold);">Igor Lyniker</strong>, advogado criminalista atuando desde 2015 em defesa penal. Especialista em casos de tráfico de drogas, habeas corpus e revisões criminais, com presença ativa nos tribunais superiores em Brasília.
+                    Advogado criminalista atuando desde 2015 em defesa penal, com experiência sólida em todas as fases do processo criminal.
+                    Sua atuação é marcada por uma forte presença em casos de tráfico de drogas e habeas corpus,
+                    com atuação direta nos tribunais superiores em Brasília.
                 </p>
-                
-                <p class="about-text">
-                    Acredito que toda pessoa merece uma defesa técnica, ética e humana — independentemente da gravidade da acusação. Meu compromisso é oferecer atendimento rápido, estratégia jurídica robusta e comunicação clara em cada caso.
-                </p>
-                
+
+                <ul class="about-highlights">
+                    <li><strong>Experiência sólida</strong> em defesa penal desde 2015</li>
+                    <li><strong>Especialização</strong> em tráfico de drogas e habeas corpus</li>
+                    <li><strong>Atuação nos tribunais superiores</strong> (STJ e STF) em Brasília</li>
+                    <li><strong>Linguagem clara e acessível</strong> — sem juridiquês</li>
+                </ul>
+
                 <div class="about-stats">
                     <div class="stat-item">
                         <div class="stat-number">8+</div>
@@ -1165,138 +1373,223 @@ a {
     </div>
 </section>
 
-<!-- =====================================================================
-     SEÇÃO POR QUE ESCOLHER
-     ===================================================================== -->
-<section class="section why">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-tag">Diferenciais</div>
-            <h2 class="section-title">Por que <span>escolher</span> nosso escritório?</h2>
-        </div>
-        
-        <div class="why-grid">
-            <div class="why-item">
-                <div class="why-number">01</div>
-                <h4>Especialização em Tráfico de Drogas</h4>
-                <p>Conhecimento aprofundado em uma das áreas mais complexas do direito penal brasileiro.</p>
-            </div>
-            
-            <div class="why-item">
-                <div class="why-number">02</div>
-                <h4>Atuação Direta nos Tribunais Superiores</h4>
-                <p>Presença ativa no STJ e STF em Brasília, com sustentações orais e habeas corpus.</p>
-            </div>
-            
-            <div class="why-item">
-                <div class="why-number">03</div>
-                <h4>Comunicação Clara e Sem Juridiquês</h4>
-                <p>Você entende cada passo do processo, sem termos complicados ou linguagem inacessível.</p>
-            </div>
-            
-            <div class="why-item">
-                <div class="why-number">04</div>
-                <h4>Presença Digital e Conteúdo Educativo</h4>
-                <p>Acompanhe conteúdos jurídicos no Instagram e tenha acesso à informação de qualidade.</p>
-            </div>
-        </div>
-        
-        <div class="why-cta">
-            <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista" 
-               class="btn-whatsapp" 
-               target="_blank"
-               rel="noopener"
-               onclick="trackWhatsApp('why')">
-                <i class="fab fa-whatsapp"></i>
-                Falar com especialista
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================================
-     SEÇÃO DEPOIMENTOS
-     ===================================================================== -->
+<!-- ===== DEPOIMENTOS ===== -->
 <section class="section testimonials">
     <div class="container">
         <div class="section-header">
-            <div class="section-tag">Depoimentos</div>
+            <div class="section-tag">Avaliações</div>
             <h2 class="section-title">O Que Nossos <span>Clientes Dizem</span></h2>
-            <p class="section-subtitle">A confiança de quem viveu momentos difíceis e encontrou uma defesa técnica</p>
+            <p class="section-subtitle">A confiança de quem encontrou uma defesa técnica em momentos difíceis</p>
         </div>
-        
+
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-quote">"</div>
                 <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Dr. Igor foi fundamental no momento mais difícil da minha vida. Profissional excepcional, atendimento rápido e defesa técnica impecável. Conseguiu meu habeas corpus em tempo recorde.</p>
+                <p class="testimonial-text">Dr. Igor foi fundamental no momento mais difícil da minha vida. Profissional excepcional, atendimento rápido e defesa técnica impecável.</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">JS</div>
+                    <div class="author-avatar">J</div>
                     <div class="author-info">
-                        <h5>João S.</h5>
+                        <h5>J. S.</h5>
                         <span>Cliente</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="testimonial-card">
                 <div class="testimonial-quote">"</div>
                 <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Atendimento humano e altamente competente. O Dr. Igor explicou tudo de forma clara, sem juridiquês, e atuou com firmeza no processo. Recomendo de olhos fechados.</p>
+                <p class="testimonial-text">Atendimento humano e altamente competente. Explicou tudo de forma clara, sem juridiquês, e atuou com firmeza no processo. Recomendo.</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">MC</div>
+                    <div class="author-avatar">M</div>
                     <div class="author-info">
-                        <h5>Maria C.</h5>
+                        <h5>M. C.</h5>
                         <span>Cliente</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="testimonial-card">
                 <div class="testimonial-quote">"</div>
                 <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Defesa técnica de altíssimo nível. Profissional ético, transparente e comprometido. Conseguiu reverter uma situação que parecia impossível. Eternamente grato.</p>
+                <p class="testimonial-text">Defesa técnica de altíssimo nível. Profissional ético, transparente e comprometido. Acompanhamento próximo durante todo o processo.</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar">RA</div>
+                    <div class="author-avatar">R</div>
                     <div class="author-info">
-                        <h5>Roberto A.</h5>
+                        <h5>R. A.</h5>
                         <span>Cliente</span>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-disclaimer">
+            <p>* Depoimentos reais de clientes. Cada caso é único e os resultados dependem das particularidades de cada processo. Em conformidade com o Código de Ética e Disciplina da OAB, não há promessa ou garantia de resultados.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Dúvidas Frequentes</div>
+            <h2 class="section-title">Perguntas <span>Frequentes</span></h2>
+            <p class="section-subtitle">Respostas claras para as principais dúvidas sobre direito criminal</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O que fazer se um familiar foi preso em flagrante?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Aja imediatamente. Nas primeiras 24 horas após a prisão acontece a audiência de custódia, momento crucial para a defesa. O ideal é contratar um advogado criminalista o quanto antes para acompanhar o caso desde o início — desde o depoimento na delegacia até a audiência de custódia. Quanto mais cedo a defesa atuar, melhores as chances de relaxamento da prisão ou liberdade provisória.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Como funciona o habeas corpus?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>O habeas corpus é uma ação constitucional usada para questionar prisões ilegais, abusivas ou arbitrárias. Pode ser usado para pedir a liberdade de quem está preso indevidamente, trancar inquéritos sem fundamentação, ou combater ilegalidades em qualquer fase do processo. Atuamos em habeas corpus em todas as instâncias, inclusive nos tribunais superiores (STJ e STF) em Brasília.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>É possível reverter uma condenação já transitada em julgado?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim, por meio da revisão criminal. Esse instrumento permite revisar sentenças condenatórias quando há provas novas, erros jurídicos graves, sentença contrária à lei ou à evidência dos autos. A revisão criminal pode ser interposta a qualquer tempo, inclusive após o cumprimento da pena. Cada caso é analisado individualmente para identificar fundamentos válidos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O atendimento é só em Boa Vista ou em todo o Brasil?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>A atuação física é em Boa Vista – Roraima, mas também atendemos casos em todo o Brasil, com destaque para os tribunais superiores em Brasília (STJ e STF). Para casos fora de Roraima, o atendimento inicial pode ser feito por WhatsApp ou videoconferência, com deslocamento conforme a necessidade do caso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quais documentos preciso ter para a primeira consulta?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Para uma primeira análise, qualquer documento relacionado ao caso já ajuda: boletim de ocorrência, auto de prisão em flagrante, intimações, decisões judiciais, número do processo (se houver), ou simplesmente um relato detalhado da situação. Se ainda não há nenhum documento (por exemplo, em casos recém-acontecidos), pode entrar em contato mesmo assim — orientamos sobre os próximos passos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Como funciona a progressão de regime?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>A progressão de regime é o direito do condenado de passar do regime mais severo (fechado) para o mais brando (semiaberto e depois aberto), conforme o cumprimento de parte da pena e o bom comportamento. Os percentuais variam conforme o tipo de crime e os antecedentes. Atuamos no acompanhamento da execução penal, pedindo progressão, livramento condicional, remição e defendendo o cliente em casos de falta grave.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Qual o valor da consulta?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>O valor varia conforme a complexidade do caso e o tipo de atuação necessária. Em conformidade com o Código de Ética da OAB, não divulgamos tabelas de preços publicamente. Entre em contato pelo WhatsApp para uma análise inicial do seu caso e proposta personalizada.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- =====================================================================
-     CTA FINAL
-     ===================================================================== -->
+<!-- ===== LOCALIZAÇÃO ===== -->
+<section class="section location">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Onde Estamos</div>
+            <h2 class="section-title">Nosso <span>Escritório</span></h2>
+            <p class="section-subtitle">Atendimento presencial em Boa Vista – RR e digital para todo o Brasil</p>
+        </div>
+
+        <div class="location-grid">
+            <div class="location-info">
+                <div class="location-info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Igor Lyniker Advocacia e Assessoria</h3>
+                <div class="location-address">
+                    <strong>Endereço:</strong>
+                    Avenida Ville Roy, 6007<br>
+                    Centro, Boa Vista – RR<br>
+                    CEP: 69301-090
+                </div>
+
+                <div class="location-hours">
+                    <h4><i class="fas fa-clock"></i> Horário de Atendimento</h4>
+                    <p>
+                        <strong>Presencial:</strong> Seg a Sex, das 8h às 18h<br>
+                        <strong>WhatsApp:</strong> 24 horas, todos os dias
+                    </p>
+                </div>
+
+                <a href="https://maps.app.goo.gl/7XFW88hwb9BmE6RK7"
+                   class="btn-directions"
+                   target="_blank"
+                   rel="noopener"
+                   onclick="trackDirections()">
+                    <i class="fas fa-directions"></i>
+                    Como chegar
+                </a>
+            </div>
+
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.5!2d-60.6712196!3d2.8224105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x62110ae4e1c72bef%3A0xebc3848fcf8513f8!2sIgor%20Lyniker%20Advocacia%20e%20Assessoria!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização do Escritório Igor Lyniker - Boa Vista, RR">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
 <section class="cta-final">
     <div class="container">
-        <h2>Estar preso ou respondendo a um processo criminal é desesperador — mas <span>você não precisa enfrentar isso sozinho.</span></h2>
-        <p>Fale agora com um advogado especialista e receba orientação jurídica imediata. Clique no WhatsApp e tenha resposta rápida e defesa técnica.</p>
-        <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista" 
-           class="btn-whatsapp" 
-           target="_blank"
-           rel="noopener"
-           onclick="trackWhatsApp('cta-final')">
+        <h2>Está preso ou respondendo a um <span>processo criminal?</span></h2>
+        <p>Fale agora com um advogado criminalista e receba orientação jurídica. Atendimento por WhatsApp em Boa Vista – RR e em todo o Brasil.</p>
+        <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
+           class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('cta-final')">
             <i class="fab fa-whatsapp"></i>
-            Falar com especialista
+            Falar com o advogado
         </a>
     </div>
 </section>
 
-<!-- =====================================================================
-     FOOTER
-     ===================================================================== -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="logo.png" alt="Dr. Igor Lyniker" class="footer-logo-img">
-                <p>Fale com um Especialista em Direito Criminal. Atendimento 24h em Boa Vista – RR e em todo o Brasil, com atuação nos tribunais superiores.</p>
+                <p>Advogado criminalista em Boa Vista – RR. Defesa técnica em prisão, tráfico, habeas corpus, revisão criminal e tribunais superiores.</p>
             </div>
-            
+
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul class="footer-contact">
@@ -1314,13 +1607,13 @@ a {
                     </li>
                 </ul>
             </div>
-            
+
             <div class="footer-col">
                 <h4>Endereço</h4>
                 <ul class="footer-contact">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Avenida Ville Roy, 6007<br>Centro, Boa Vista - RR</span>
+                        <span>Avenida Ville Roy, 6007<br>Centro, Boa Vista – RR</span>
                     </li>
                 </ul>
                 <h4 style="margin-top: 32px;">Redes Sociais</h4>
@@ -1334,52 +1627,63 @@ a {
                 </div>
             </div>
         </div>
-        
+
+        <div class="footer-disclaimer">
+            <p>Em conformidade com o Provimento nº 205/2021 e o Código de Ética e Disciplina da OAB, este site tem caráter exclusivamente informativo. Não há promessa ou garantia de resultados. Cada caso é único e depende das suas particularidades.</p>
+        </div>
+
         <div class="footer-bottom">
             © 2025 Igor Lyniker Assessoria e Advocacia. Todos os direitos reservados.
         </div>
     </div>
 </footer>
 
-<!-- WhatsApp Float Button -->
-<a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista" 
-   class="whatsapp-float" 
-   target="_blank"
-   rel="noopener"
-   aria-label="Falar no WhatsApp"
+<!-- WhatsApp Float -->
+<a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
    onclick="trackWhatsApp('float')">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- =====================================================================
-     SCRIPTS
-     ===================================================================== -->
 <script>
-// Tracking de cliques no WhatsApp
+// === Tracking WhatsApp ===
 function trackWhatsApp(location) {
-    // Facebook Pixel
     if (typeof fbq !== 'undefined') {
         fbq('track', 'Contact', { source: location });
         fbq('track', 'Lead', { source: location });
     }
-    
-    // Google Analytics
     if (typeof gtag !== 'undefined') {
         gtag('event', 'whatsapp_click', {
             'event_category': 'engagement',
             'event_label': location
         });
     }
-    
-    console.log('WhatsApp click tracked:', location);
+    console.log('WhatsApp click:', location);
 }
 
-// Animação ao scroll - Intersection Observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// === Tracking Como Chegar ===
+function trackDirections() {
+    if (typeof fbq !== 'undefined') fbq('track', 'FindLocation');
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'directions_click', { 'event_category': 'engagement' });
+    }
+}
 
+// === FAQ Accordion ===
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Fecha todos
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        
+        // Abre o clicado (se não estava ativo)
+        if (!isActive) item.classList.add('active');
+    });
+});
+
+// === Animação ao scroll ===
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1387,23 +1691,19 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
         }
     });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-// Aplicar animação nos cards e itens
-document.querySelectorAll('.service-card, .why-item, .testimonial-card, .stat-item').forEach((el, index) => {
+document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .stat-item, .faq-item').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    el.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
     observer.observe(el);
 });
 
-// Detectar fbclid e armazenar (Facebook tracking)
+// === Capturar fbclid ===
 (function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const fbclid = urlParams.get('fbclid');
-    if (fbclid) {
-        sessionStorage.setItem('fbclid', fbclid);
-    }
+    const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+    if (fbclid) sessionStorage.setItem('fbclid', fbclid);
 })();
 </script>
 
