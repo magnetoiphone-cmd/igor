@@ -247,11 +247,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-services-list {
-    font-size: clamp(15px, 1.6vw, 18px);
+    font-size: clamp(14px, 1.5vw, 17px);
     color: var(--gray);
     margin-bottom: 40px;
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     animation: fadeInUp 1s ease 0.5s both;
 }
 
@@ -602,11 +605,12 @@ a { color: inherit; text-decoration: none; }
 
 .stat-number {
     font-family: var(--font-display);
-    font-size: 42px;
+    font-size: clamp(28px, 3.5vw, 42px);
     font-weight: 600;
     color: var(--gold);
     line-height: 1;
     margin-bottom: 8px;
+    white-space: nowrap;
 }
 
 .stat-label {
@@ -1324,8 +1328,8 @@ a { color: inherit; text-decoration: none; }
         <h1>Advogado Criminalista em <span>Boa Vista/RR</span></h1>
 
         <p class="hero-services-list">
-            Defesa criminal em casos de <strong>prisão, investigação, processo criminal, habeas corpus, recursos, execução penal</strong> e <strong>tribunais superiores</strong>.<br>
-            Atuação também especializada em processos de <strong>tráfico de drogas, busca ilegal e abordagem policial</strong>.
+            Defesa criminal estratégica em <strong>prisões, inquéritos, ações penais, audiências, habeas corpus, recursos, revisão criminal, execução penal</strong> e <strong>tribunais superiores</strong>.<br><br>
+            Atuação também especializada em processos de <strong>tráfico de drogas, busca ilegal, abordagem policial</strong> e <strong>nulidades criminais</strong>.
         </p>
 
         <div class="hero-buttons">
@@ -1348,7 +1352,7 @@ a { color: inherit; text-decoration: none; }
         <div class="urgent-banner">
             <i class="fas fa-exclamation-triangle"></i>
             <h2 class="urgent-title">Caso <span>URGENTE?</span></h2>
-            <p class="urgent-subtitle">Em situações urgentes, a orientação jurídica rápida pode fazer diferença na proteção dos direitos da pessoa investigada ou presa.</p>
+            <p class="urgent-subtitle">Em situações criminais urgentes, a orientação jurídica rápida pode ser importante para proteger direitos desde o início.</p>
         </div>
 
         <div class="urgent-grid">
@@ -1395,7 +1399,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="urgent-cta">
-            <p><strong>Você ou um familiar está numa dessas situações?</strong><br>Fale com um advogado criminalista para entender os próximos passos.</p>
+            <p><strong>Você ou um familiar está numa dessas situações?</strong><br>Fale com um advogado criminalista e entenda os próximos passos.</p>
             <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20tenho%20um%20caso%20URGENTE,%20preciso%20de%20um%20advogado%20criminalista"
                class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('urgent')">
                 <i class="fab fa-whatsapp"></i>
@@ -1423,20 +1427,20 @@ a { color: inherit; text-decoration: none; }
 
             <div class="crime-card">
                 <div class="crime-card-icon"><i class="fas fa-house-lock"></i></div>
-                <h3>Crimes Patrimoniais</h3>
+                <h3>Crimes contra o Patrimônio</h3>
                 <p>Furto, roubo, estelionato, receptação, apropriação indébita e extorsão.</p>
             </div>
 
             <div class="crime-card">
                 <div class="crime-card-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                <h3>Violência Doméstica e Lei Maria da Penha</h3>
-                <p>Defesa em medidas protetivas, audiência, ação penal e análise de provas.</p>
+                <h3>Lei Maria da Penha</h3>
+                <p>Defesa em medidas protetivas, audiências, ações penais e análise de provas.</p>
             </div>
 
             <div class="crime-card">
                 <div class="crime-card-icon"><i class="fas fa-car-burst"></i></div>
                 <h3>Crimes de Trânsito</h3>
-                <p>Embriaguez ao volante, lesão corporal e homicídio culposo no trânsito.</p>
+                <p>Embriaguez ao volante, lesão corporal no trânsito e homicídio culposo.</p>
             </div>
 
             <div class="crime-card">
@@ -1447,7 +1451,7 @@ a { color: inherit; text-decoration: none; }
 
             <div class="crime-card">
                 <div class="crime-card-icon"><i class="fas fa-pills"></i></div>
-                <h3>Crimes da Lei de Drogas</h3>
+                <h3>Lei de Drogas</h3>
                 <p>Tráfico, associação para o tráfico, busca ilegal, abordagem policial e prova ilícita.</p>
             </div>
         </div>
@@ -1557,7 +1561,7 @@ a { color: inherit; text-decoration: none; }
 
                 <ul class="about-highlights">
                     <li><strong>Atuação criminal desde 2015</strong> em defesa penal técnica</li>
-                    <li><strong>Atuação especializada</strong> em tráfico de drogas, habeas corpus e recursos criminais</li>
+                    <li><strong>Atuação especializada</strong> em tráfico de drogas, habeas corpus, recursos criminais e tribunais superiores</li>
                     <li><strong>Atuação nos tribunais superiores</strong> (STJ e STF) em Brasília</li>
                     <li><strong>Linguagem clara e acessível</strong> — sem juridiquês</li>
                 </ul>
@@ -1572,7 +1576,7 @@ a { color: inherit; text-decoration: none; }
                         <div class="stat-label">Atendimento</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">STF</div>
+                        <div class="stat-number">STJ/STF</div>
                         <div class="stat-label">Tribunais Superiores</div>
                     </div>
                 </div>
