@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="max-image-preview:large">
-<meta name="description" content="Advogado Criminalista em Boa Vista - RR. Igor Lyniker: defesa em prisão, tráfico, habeas corpus, revisão criminal e tribunais superiores. Atendimento 24h.">
-<meta name="keywords" content="advogado criminal Boa Vista, habeas corpus Roraima, advogado tráfico de drogas, prisão em flagrante, audiência de custódia, revisão criminal, STJ STF, defesa criminal RR">
+<meta name="description" content="Advogado Criminalista em Boa Vista/RR. Dr. Igor Lyniker (OAB/RR 1480): defesa em prisões, inquéritos, ações penais, habeas corpus, recursos, execução penal, tribunais superiores e tráfico de drogas. Atendimento 24h.">
+<meta name="keywords" content="advogado criminalista Boa Vista, advogado criminal Roraima, OAB RR 1480, habeas corpus, prisão em flagrante, audiência de custódia, tráfico de drogas, revisão criminal, STJ STF, defesa criminal RR, crimes Maria da Penha, crimes de trânsito">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Igor Lyniker - Advogado Criminalista em Boa Vista/RR">
@@ -840,6 +840,7 @@ a { color: inherit; text-decoration: none; }
     line-height: 1.7;
     font-weight: 300;
     max-width: 320px;
+    margin-bottom: 16px;
 }
 
 .footer-col h4 {
@@ -1064,6 +1065,156 @@ a { color: inherit; text-decoration: none; }
     .location-info { padding: 32px 24px; }
     .location-info h3 { font-size: 24px; }
 }
+
+/* === SELO OAB === */
+.oab-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 169, 110, 0.12);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeInDown 1s ease 0.2s both;
+}
+
+.oab-badge i { font-size: 14px; }
+
+/* === BOTÃO SECUNDÁRIO === */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 17px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--white);
+    transform: translateY(-2px);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    animation: fadeInUp 1s ease 0.7s both;
+}
+
+/* === SEÇÃO TIPOS DE CRIME === */
+.crime-types {
+    background: var(--black);
+}
+
+.crime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.crime-card {
+    background: linear-gradient(145deg, var(--dark-2) 0%, rgba(20,20,20,0.5) 100%);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    border-radius: 4px;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.crime-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.crime-card:hover::before { opacity: 1; }
+
+.crime-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 50px rgba(201, 169, 110, 0.08);
+}
+
+.crime-card-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(201, 169, 110, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 22px;
+    margin-bottom: 20px;
+    transition: all var(--transition);
+}
+
+.crime-card:hover .crime-card-icon {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+.crime-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.crime-card p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* === OAB no footer === */
+.footer-oab {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(201, 169, 110, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .hero-buttons { flex-direction: column; align-items: center; width: 100%; }
+    .hero-buttons .btn-whatsapp,
+    .hero-buttons .btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
+    .crime-card { padding: 28px 24px; }
+}
+
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -1166,20 +1317,28 @@ a { color: inherit; text-decoration: none; }
             <img src="logo.png" alt="Dr. Igor Lyniker - Advogado Criminalista">
         </div>
 
+        <div class="oab-badge"><i class="fas fa-certificate"></i> OAB/RR 1480</div>
+
         <div class="hero-location"><i class="fas fa-map-marker-alt"></i> Boa Vista – Roraima</div>
 
         <h1>Advogado Criminalista em <span>Boa Vista/RR</span></h1>
 
         <p class="hero-services-list">
-            Atuação especializada em <strong>prisão, tráfico, habeas corpus</strong> e <strong>revisão criminal</strong>.<br>
-            Defesa técnica em todas as fases do processo penal — inclusive nos tribunais superiores.
+            Defesa criminal em casos de <strong>prisão, investigação, processo criminal, habeas corpus, recursos, execução penal</strong> e <strong>tribunais superiores</strong>.<br>
+            Atuação também especializada em processos de <strong>tráfico de drogas, busca ilegal e abordagem policial</strong>.
         </p>
 
-        <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
-           class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('hero')">
-            <i class="fab fa-whatsapp"></i>
-            Falar com o advogado agora
-        </a>
+        <div class="hero-buttons">
+            <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
+               class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('hero')">
+                <i class="fab fa-whatsapp"></i>
+                Falar com advogado criminalista agora
+            </a>
+            <a href="#servicos" class="btn-secondary">
+                <i class="fas fa-arrow-down"></i>
+                Ver áreas de atuação
+            </a>
+        </div>
     </div>
 </section>
 
@@ -1189,7 +1348,7 @@ a { color: inherit; text-decoration: none; }
         <div class="urgent-banner">
             <i class="fas fa-exclamation-triangle"></i>
             <h2 class="urgent-title">Caso <span>URGENTE?</span></h2>
-            <p class="urgent-subtitle">Situações que exigem atuação imediata de um advogado criminalista. Cada hora conta.</p>
+            <p class="urgent-subtitle">Em situações urgentes, a orientação jurídica rápida pode fazer diferença na proteção dos direitos da pessoa investigada ou presa.</p>
         </div>
 
         <div class="urgent-grid">
@@ -1236,12 +1395,61 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="urgent-cta">
-            <p><strong>Você ou um familiar está numa dessas situações?</strong><br>Não perca tempo. Fale agora.</p>
+            <p><strong>Você ou um familiar está numa dessas situações?</strong><br>Fale com um advogado criminalista para entender os próximos passos.</p>
             <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20tenho%20um%20caso%20URGENTE,%20preciso%20de%20um%20advogado%20criminalista"
                class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('urgent')">
                 <i class="fab fa-whatsapp"></i>
                 Atendimento de Emergência
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TIPOS DE CRIME / DEFESA CRIMINAL AMPLA ===== -->
+<section class="section crime-types" id="servicos">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Áreas de Defesa</div>
+            <h2 class="section-title">Defesa criminal em diferentes <span>tipos de acusação</span></h2>
+            <p class="section-subtitle">Atuação criminalista completa, em diversas naturezas de crime</p>
+        </div>
+
+        <div class="crime-grid">
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-user-injured"></i></div>
+                <h3>Crimes contra a Pessoa</h3>
+                <p>Homicídio, tentativa de homicídio, lesão corporal, ameaça e crimes contra a honra.</p>
+            </div>
+
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-house-lock"></i></div>
+                <h3>Crimes Patrimoniais</h3>
+                <p>Furto, roubo, estelionato, receptação, apropriação indébita e extorsão.</p>
+            </div>
+
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>Violência Doméstica e Lei Maria da Penha</h3>
+                <p>Defesa em medidas protetivas, audiência, ação penal e análise de provas.</p>
+            </div>
+
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-car-burst"></i></div>
+                <h3>Crimes de Trânsito</h3>
+                <p>Embriaguez ao volante, lesão corporal e homicídio culposo no trânsito.</p>
+            </div>
+
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-vote-yea"></i></div>
+                <h3>Crimes Eleitorais</h3>
+                <p>Defesa em investigações e processos criminais eleitorais.</p>
+            </div>
+
+            <div class="crime-card">
+                <div class="crime-card-icon"><i class="fas fa-pills"></i></div>
+                <h3>Crimes da Lei de Drogas</h3>
+                <p>Tráfico, associação para o tráfico, busca ilegal, abordagem policial e prova ilícita.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1343,21 +1551,21 @@ a { color: inherit; text-decoration: none; }
 
                 <p class="about-text">
                     Advogado criminalista atuando desde 2015 em defesa penal, com experiência sólida em todas as fases do processo criminal.
-                    Sua atuação é marcada por uma forte presença em casos de tráfico de drogas e habeas corpus,
+                    Atuação marcada por forte presença em casos de tráfico de drogas, habeas corpus e recursos criminais,
                     com atuação direta nos tribunais superiores em Brasília.
                 </p>
 
                 <ul class="about-highlights">
-                    <li><strong>Experiência sólida</strong> em defesa penal desde 2015</li>
-                    <li><strong>Especialização</strong> em tráfico de drogas e habeas corpus</li>
+                    <li><strong>Atuação criminal desde 2015</strong> em defesa penal técnica</li>
+                    <li><strong>Atuação especializada</strong> em tráfico de drogas, habeas corpus e recursos criminais</li>
                     <li><strong>Atuação nos tribunais superiores</strong> (STJ e STF) em Brasília</li>
                     <li><strong>Linguagem clara e acessível</strong> — sem juridiquês</li>
                 </ul>
 
                 <div class="about-stats">
                     <div class="stat-item">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Anos de Atuação</div>
+                        <div class="stat-number">2015</div>
+                        <div class="stat-label">Atuando desde</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">24h</div>
@@ -1508,6 +1716,46 @@ a { color: inherit; text-decoration: none; }
                     <p>O valor varia conforme a complexidade do caso e o tipo de atuação necessária. Em conformidade com o Código de Ética da OAB, não divulgamos tabelas de preços publicamente. Entre em contato pelo WhatsApp para uma análise inicial do seu caso e proposta personalizada.</p>
                 </div>
             </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O advogado criminalista atua em quais tipos de crime?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Atuação em inquéritos, ações penais e recursos envolvendo crimes contra a pessoa, patrimônio, Lei Maria da Penha, crimes de trânsito, crimes eleitorais, tráfico de drogas, execução penal e outras demandas criminais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quem responde a processo criminal precisa de advogado desde o início?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim. A atuação desde o inquérito ou desde a primeira intimação pode ajudar na organização da defesa, análise das provas e prevenção de prejuízos processuais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>É possível questionar uma abordagem policial?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim. A legalidade da abordagem, da busca pessoal, veicular ou domiciliar pode ser analisada conforme os elementos do caso concreto.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O advogado atua em recursos criminais?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sim. A atuação pode envolver apelação criminal, habeas corpus, recurso especial, agravos, revisão criminal e medidas perante tribunais superiores.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1587,7 +1835,8 @@ a { color: inherit; text-decoration: none; }
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="logo.png" alt="Dr. Igor Lyniker" class="footer-logo-img">
-                <p>Advogado criminalista em Boa Vista – RR. Defesa técnica em prisão, tráfico, habeas corpus, revisão criminal e tribunais superiores.</p>
+                <p>Advogado criminalista em Boa Vista/RR. Defesa técnica em inquéritos, ações penais, prisões, audiência de custódia, habeas corpus, recursos, revisão criminal, execução penal e processos de tráfico de drogas.</p>
+                <span class="footer-oab"><i class="fas fa-certificate"></i> OAB/RR 1480</span>
             </div>
 
             <div class="footer-col">
@@ -1633,7 +1882,7 @@ a { color: inherit; text-decoration: none; }
         </div>
 
         <div class="footer-bottom">
-            © 2025 Igor Lyniker Assessoria e Advocacia. Todos os direitos reservados.
+            © 2026 Igor Lyniker Assessoria e Advocacia · OAB/RR 1480 · Todos os direitos reservados.
         </div>
     </div>
 </footer>
