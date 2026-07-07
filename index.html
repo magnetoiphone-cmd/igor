@@ -1907,12 +1907,48 @@ a { color: inherit; text-decoration: none; }
 </a>
 
 <script>
+// === Helper: Pegar cookies do Meta (fbp e fbc) ===
+function getFbCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+// === Enviar evento pro CAPI (server-side) ===
+async function sendCAPI(eventName, eventId) {
+    try {
+        await fetch('/api/capi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                eventName: eventName,
+                eventId: eventId,
+                sourceUrl: window.location.href,
+                userAgent: navigator.userAgent,
+                fbp: getFbCookie('_fbp'),
+                fbc: getFbCookie('_fbc'),
+            }),
+        });
+    } catch (err) {
+        console.error('CAPI erro:', err);
+    }
+}
+
 // === Tracking WhatsApp ===
 function trackWhatsApp(location) {
+    // Event ID único para deduplicação (importante!)
+    const eventId = `wa_${location}_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+
+    // 1. Envia pro Pixel (client-side)
     if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact', { source: location });
-        fbq('track', 'Lead', { source: location });
+        fbq('track', 'Contact', { source: location }, { eventID: eventId });
+        fbq('track', 'Lead', { source: location }, { eventID: eventId });
     }
+    // 2. Envia pro CAPI (server-side) — mesmo event_id pra deduplicar
+    sendCAPI('Lead', eventId);
+
+    // 3. Google Ads
     if (typeof gtag !== 'undefined') {
         gtag('event', 'whatsapp_click', {
             'event_category': 'engagement',
@@ -1924,7 +1960,13 @@ function trackWhatsApp(location) {
 
 // === Tracking Como Chegar ===
 function trackDirections() {
-    if (typeof fbq !== 'undefined') fbq('track', 'FindLocation');
+    const eventId = `dir_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'FindLocation', {}, { eventID: eventId });
+    }
+    sendCAPI('FindLocation', eventId);
+
     if (typeof gtag !== 'undefined') {
         gtag('event', 'directions_click', { 'event_category': 'engagement' });
     }
