@@ -1303,6 +1303,187 @@ a { color: inherit; text-decoration: none; }
     .faq-question { font-size: 14.5px; padding: 18px 20px; }
     .faq-item.active .faq-answer { padding: 0 20px 20px; }
 }
+/* === FORMULÁRIO DE CONTATO === */
+.contact-form-section {
+    background: var(--dark);
+    padding: 80px 0;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.form-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--white);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.form-header p {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(201, 169, 110, 0.05);
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.1);
+}
+
+.form-btn {
+    width: 100%;
+    background: var(--whatsapp);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-btn:hover {
+    background: #1ebd55;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.form-btn:active {
+    transform: translateY(0);
+}
+
+.btn-loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 16px;
+}
+
+.form-success,
+.form-error {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-success {
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.form-error {
+    border-color: rgba(255, 77, 77, 0.3);
+}
+
+.success-icon {
+    font-size: 48px;
+    color: var(--whatsapp);
+    margin-bottom: 16px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.form-success h3,
+.form-error h3 {
+    color: var(--white);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.form-success p,
+.form-error p {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+/* Máscara do WhatsApp */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .form-success,
+    .form-error {
+        padding: 30px 20px;
+    }
+}
+
 </style>
 </head>
 
@@ -1602,6 +1783,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FORMULÁRIO DE CONTATO ===== -->
+<section class="section contact-form-section">
+    <div class="container">
+        <div class="form-header">
+            <h2>Prefere escrever antes de conversar?</h2>
+            <p>Deixe seus dados. Respondemos em até 1 hora. Sigilo profissional garantido.</p>
+        </div>
+
+        <form id="contatoForm" class="contact-form" method="POST">
+            <input type="hidden" name="access_key" value="693fdeb8-373f-42eb-9e0b-d9375a498da0">
+            <input type="hidden" name="redirect" value="https://advigorlyniker.com.br/">
+
+            <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp *</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(95) 98114-1718" inputmode="tel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">O que aconteceu? *</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente o caso (prisão, investigação, etc)" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="form-btn">
+                <span class="btn-text">Enviar mensagem</span>
+                <span class="btn-loader" style="display:none;">Enviando...</span>
+            </button>
+
+            <p class="form-note">🔒 Sigilo profissional garantido</p>
+        </form>
+
+        <div id="formSuccess" class="form-success" style="display:none;">
+            <div class="success-icon">✓</div>
+            <h3>Mensagem recebida!</h3>
+            <p>Obrigado por entrar em contato. Respondemos em até 1 hora no WhatsApp ou e-mail.</p>
+        </div>
+
+        <div id="formError" class="form-error" style="display:none;">
+            <h3>Erro ao enviar</h3>
+            <p>Tente novamente ou fale conosco no WhatsApp.</p>
         </div>
     </div>
 </section>
@@ -2021,6 +2250,130 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
     const fbclid = new URLSearchParams(window.location.search).get('fbclid');
     if (fbclid) sessionStorage.setItem('fbclid', fbclid);
 })();
+</script>
+<!-- ============================================================
+     FORMULÁRIO DE CONTATO - Script Web3Forms + Tracking
+     ============================================================ -->
+<script>
+// Máscara do WhatsApp
+document.getElementById('whatsapp').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    
+    if (value.length === 0) {
+        e.target.value = '';
+    } else if (value.length <= 2) {
+        e.target.value = `(${value}`;
+    } else if (value.length <= 7) {
+        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else {
+        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    }
+});
+
+// Submit do formulário
+document.getElementById('contatoForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = form.querySelector('.form-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoader = submitBtn.querySelector('.btn-loader');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    
+    // Mostrar loading
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoader.style.display = 'inline-block';
+    
+    // Dados do formulário
+    const formData = new FormData(form);
+    const nome = formData.get('nome');
+    const whatsapp = formData.get('whatsapp');
+    const mensagem = formData.get('mensagem');
+    
+    try {
+        // 1. Enviar pro Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) throw new Error('Erro na requisição');
+        
+        // 2. Disparar evento Lead no Pixel Meta + CAPI
+        const eventId = `form_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+        
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', { 
+                content_name: 'Formulário Contato',
+                source: 'form'
+            }, { eventID: eventId });
+        }
+        
+        if (typeof sendCAPI === 'function') {
+            sendCAPI('Lead', eventId);
+        }
+        
+        // 3. Disparar conversão no Google Ads (via dataLayer pro GTM)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-390295009/AbC-D_efG', // Ajustar conforme conversão configurada
+                'transaction_id': eventId,
+                'value': 1
+            });
+        }
+        
+        if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({
+                'event': 'form_submission',
+                'form_type': 'contact_form',
+                'source': 'formula_contato'
+            });
+        }
+        
+        // 4. Mostrar sucesso
+        form.style.display = 'none';
+        formError.style.display = 'none';
+        formSuccess.style.display = 'block';
+        
+        // Scrollar pra mensagem de sucesso
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+    } catch (error) {
+        console.error('Erro ao enviar formulário:', error);
+        
+        // Mostrar erro
+        form.style.display = 'none';
+        formSuccess.style.display = 'none';
+        formError.style.display = 'block';
+        
+        // Restaurar botão
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoader.style.display = 'none';
+    }
+});
+
+// Restaurar formulário ao recarregar
+window.addEventListener('pageshow', function(event) {
+    const form = document.getElementById('contatoForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    
+    if (form) {
+        form.reset();
+        form.style.display = 'block';
+        formSuccess.style.display = 'none';
+        formError.style.display = 'none';
+        
+        const submitBtn = form.querySelector('.form-btn');
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn-text').style.display = 'inline';
+        submitBtn.querySelector('.btn-loader').style.display = 'none';
+    }
+});
 </script>
 
 </body>
