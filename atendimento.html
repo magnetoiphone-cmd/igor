@@ -1512,7 +1512,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
     <div class="hero-content">
         <div class="hero-logo">
-            <img src="logo.png" alt="Dr. Igor Lyniker - Advogado Criminalista">
+            <img src="logo.png" alt="Dr. Igor Lyniker - Advogado Criminalista" class="hero-logo-img">
         </div>
 
         <div class="oab-badge"><i class="fas fa-certificate"></i> OAB/RR 1480</div>
@@ -2310,7 +2310,11 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
     // Gera event_id único para deduplicar entre browser e server
     var eventId = "tq_" + evento + "_" + Date.now() + "_" + Math.random().toString(36).substring(7);
     if(typeof fbq === "function"){
-      try{ fbq("track", evento, dados || {}, { eventID: eventId }); }
+      try{
+        // Lead = evento padrão (track); AbriuTriagem e LeadDesqualificado = personalizados (trackCustom)
+        var metodo = (evento === "Lead") ? "track" : "trackCustom";
+        fbq(metodo, evento, dados || {}, { eventID: eventId });
+      }
       catch(e){ /* silencioso: nunca quebrar o fluxo do usuário */ }
     }
     // Envia pro CAPI também (server-side, não é bloqueado por adblockers)
@@ -2337,6 +2341,7 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
 
     // qualificado
     var urgente = resp.some(function(r){ return r.urgente; });
+    if(typeof dataLayer !== 'undefined'){ dataLayer.push({event:'lead_qualificado'}); }
     pixel("Lead", { content_name: urgente ? "Qualificado urgente" : "Qualificado" });
 
     var linhas = [
@@ -2407,6 +2412,7 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
     if(!a) return;
     if(a.hasAttribute("data-tq-ignorar")) return;   // escapatória para links de rodapé
     e.preventDefault();
+    if(typeof fbq !== 'undefined'){ fbq('trackCustom','AbriuTriagem'); }
     abrir((a.textContent || "").trim().slice(0,60));
   }, true);
 
