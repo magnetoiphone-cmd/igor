@@ -1382,7 +1382,7 @@ a { color: inherit; text-decoration: none; }
 
 .form-btn {
     width: 100%;
-    background: var(--whatsapp);
+    background: var(--green);
     color: white;
     border: none;
     border-radius: 8px;
@@ -1449,7 +1449,7 @@ a { color: inherit; text-decoration: none; }
 
 .success-icon {
     font-size: 48px;
-    color: var(--whatsapp);
+    color: var(--green);
     margin-bottom: 16px;
     animation: scaleIn 0.5s ease;
 }
@@ -1806,7 +1806,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="form-group">
                 <label for="whatsapp">WhatsApp *</label>
-                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(95) 98114-1718" inputmode="tel" required>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="(95) 9XXXX-XXXX" inputmode="tel" required>
             </div>
 
             <div class="form-group">
@@ -1835,58 +1835,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-<!-- ===== DEPOIMENTOS ===== -->
+<!-- ===== AVALIAÇÕES DO GOOGLE ===== -->
 <section class="section testimonials">
     <div class="container">
         <div class="section-header">
             <div class="section-tag">Avaliações</div>
             <h2 class="section-title">O Que Nossos <span>Clientes Dizem</span></h2>
-            <p class="section-subtitle">A confiança de quem encontrou uma defesa técnica em momentos difíceis</p>
+            <p class="section-subtitle">Avaliações reais de clientes no Google</p>
         </div>
 
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Dr. Igor foi fundamental no momento mais difícil da minha vida. Profissional excepcional, atendimento rápido e defesa técnica impecável.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">J</div>
-                    <div class="author-info">
-                        <h5>J. S.</h5>
-                        <span>Cliente</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Atendimento humano e altamente competente. Explicou tudo de forma clara, sem juridiquês, e atuou com firmeza no processo. Recomendo.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">M</div>
-                    <div class="author-info">
-                        <h5>M. C.</h5>
-                        <span>Cliente</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-quote">"</div>
-                <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                <p class="testimonial-text">Defesa técnica de altíssimo nível. Profissional ético, transparente e comprometido. Acompanhamento próximo durante todo o processo.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">R</div>
-                    <div class="author-info">
-                        <h5>R. A.</h5>
-                        <span>Cliente</span>
-                    </div>
-                </div>
+        <div class="testimonials-grid" style="display: flex; align-items: center; justify-content: center; min-height: 300px;">
+            <div style="text-align: center;">
+                <p style="font-size: 18px; color: var(--gold); margin-bottom: 20px;">★★★★★ 4.9 de 5 estrelas · 96 avaliações no Google</p>
+                <p style="font-size: 16px; color: var(--white); max-width: 600px; line-height: 1.6; margin-bottom: 30px;">Confira as avaliações reais de clientes no Google</p>
+                <a href="https://maps.app.goo.gl/7XFW88hwb9BmE6RK7" 
+                   target="_blank" 
+                   rel="noopener" 
+                   style="display: inline-block; background: var(--gold); color: var(--dark); padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(201, 169, 110, 0.3)';"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                    Ver avaliações no Google
+                </a>
             </div>
         </div>
 
         <div class="testimonials-disclaimer">
-            <p>* Depoimentos reais de clientes. Cada caso é único e os resultados dependem das particularidades de cada processo. Em conformidade com o Código de Ética e Disciplina da OAB, não há promessa ou garantia de resultados.</p>
+            <p>* Avaliações reais de clientes publicadas no Google. Cada caso é único e os resultados dependem das particularidades de cada processo. Em conformidade com o Código de Ética e Disciplina da OAB, não há promessa ou garantia de resultados.</p>
         </div>
     </div>
 </section>
@@ -2319,7 +2293,6 @@ document.getElementById('contatoForm').addEventListener('submit', async function
         // 3. Disparar conversão no Google Ads (via dataLayer pro GTM)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'conversion', {
-                'send_to': 'AW-390295009/AbC-D_efG', // Ajustar conforme conversão configurada
                 'transaction_id': eventId,
                 'value': 1
             });
