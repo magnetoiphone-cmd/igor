@@ -2164,11 +2164,16 @@ function trackWhatsApp(location) {
     // 2. Envia pro CAPI (server-side) — mesmo event_id pra deduplicar
     sendCAPI('Lead', eventId);
 
-    // 3. Google Ads
+    // 3. Google Ads — conversão "WhatsApp - Clique Site" (conta AW-390295009)
     if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
+            'value': 1.0,
+            'currency': 'BRL'
+        });
         gtag('event', 'whatsapp_click', {
             'event_category': 'engagement',
-            'event_label': location
+            'event_label': location + ' | origem: ' + (window.__origemVisita || 'site')
         });
     }
     console.log('WhatsApp click:', location);
@@ -2293,8 +2298,10 @@ document.getElementById('contatoForm').addEventListener('submit', async function
         // 3. Disparar conversão no Google Ads (via dataLayer pro GTM)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'conversion', {
+                'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
                 'transaction_id': eventId,
-                'value': 1
+                'value': 1.0,
+                'currency': 'BRL'
             });
         }
         
@@ -2347,6 +2354,61 @@ window.addEventListener('pageshow', function(event) {
         submitBtn.querySelector('.btn-loader').style.display = 'none';
     }
 });
+</script>
+
+
+<!-- ===== ORIGEM DA VISITA NA MENSAGEM DO WHATSAPP =====
+     Identifica se o visitante veio de anúncio do Meta (fbclid / utm_source),
+     do Google Ads (gclid / gbraid / wbraid), do Instagram orgânico ou do Google orgânico,
+     e ajusta o texto pré-preenchido do WhatsApp para você saber a origem de cada conversa. -->
+<script>
+(function(){
+  var ORIGENS = {
+    meta:        { tag: 'anuncio_meta',     frase: 'vi seu anúncio no Instagram' },
+    google:      { tag: 'anuncio_google',   frase: 'te encontrei no Google' },
+    insta_org:   { tag: 'instagram_organico', frase: 'vi seu perfil no Instagram' },
+    google_org:  { tag: 'google_organico',  frase: 'pesquisei no Google e achei seu site' },
+    site:        { tag: 'site',             frase: 'vi seu site' }
+  };
+  function detectar(){
+    var q = new URLSearchParams(window.location.search);
+    var src = (q.get('utm_source') || '').toLowerCase();
+    if (q.get('fbclid') || /^(facebook|instagram|meta|fb|ig)$/.test(src)) return 'meta';
+    if (q.get('gclid') || q.get('gbraid') || q.get('wbraid') || src === 'google') return 'google';
+    var ref = (document.referrer || '').toLowerCase();
+    if (/instagram\.com|facebook\.com|l\.instagram|lm\.facebook/.test(ref)) return 'insta_org';
+    if (/google\./.test(ref)) return 'google_org';
+    return null;
+  }
+  var chave = detectar();
+  try {
+    if (chave) { sessionStorage.setItem('origem_visita', chave); }
+    else { chave = sessionStorage.getItem('origem_visita'); }
+  } catch(e) {}
+  if (!chave || !ORIGENS[chave]) chave = 'site';
+  var o = ORIGENS[chave];
+  window.__origemVisita = o.tag;
+
+  function textoPara(textoAtual){
+    var t = textoAtual || '';
+    if (/URGENTE/i.test(t)) {
+      return 'Oi, tenho um caso URGENTE, preciso de um advogado criminalista (' + o.frase + ')';
+    }
+    return 'Oi, ' + o.frase + ' e preciso de ajuda de um advogado criminalista';
+  }
+  function ajustarLinks(){
+    var links = document.querySelectorAll('a[href*="api.whatsapp.com/send"], a[href*="wa.me/"]');
+    for (var i = 0; i < links.length; i++) {
+      try {
+        var url = new URL(links[i].href);
+        url.searchParams.set('text', textoPara(url.searchParams.get('text')));
+        links[i].href = url.toString();
+      } catch(e) {}
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ajustarLinks);
+  else ajustarLinks();
+})();
 </script>
 
 </body>
