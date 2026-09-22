@@ -2209,7 +2209,6 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
     <div class="tq-bars" aria-hidden="true">
       <div class="tq-bar" data-bar="0"><i></i></div>
       <div class="tq-bar" data-bar="1"><i></i></div>
-      <div class="tq-bar" data-bar="2"><i></i></div>
     </div>
 
     <!-- PERGUNTA 1 — situação do caso -->
@@ -2335,16 +2334,14 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
     var linhas = [
       "Oi, vim pelo site.",
       "",
-      "Local do caso: " + resp[0].val,
-      "Situação: "      + resp[1].val,
-      "Advogado: "      + resp[2].val
+      "Situação: " + resp[0].val,
+      "Advogado: " + resp[1].val
     ];
     if(origem) linhas.push("", "Origem: " + origem);
 
     document.getElementById("tqResumo").innerHTML =
-      "<b>Local:</b> "     + resp[0].val + "<br>" +
-      "<b>Situação:</b> "  + resp[1].val + "<br>" +
-      "<b>Advogado:</b> "  + resp[2].val;
+      "<b>Situação:</b> "  + resp[0].val + "<br>" +
+      "<b>Advogado:</b> "  + resp[1].val;
 
     var destino = "https://api.whatsapp.com/send?phone=" + WHATSAPP +
                   "&text=" + encodeURIComponent(linhas.join("\n"));
@@ -2367,7 +2364,7 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
       resp.length = atual + 1;
       pintarBarras();
       atual++;
-      if(atual < 3){ mostrar(atual); } else { finalizar(); }
+      if(atual < 2){ mostrar(atual); } else { finalizar(); }
       return;
     }
     if(e.target.closest("[data-back]")){
