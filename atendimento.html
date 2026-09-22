@@ -2350,6 +2350,10 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
 
     mostrar("ok");
     pintarBarras();
+
+    // Abre o WhatsApp automaticamente assim que a 2ª pergunta é respondida
+    // (o botão na tela "ok" continua funcionando como fallback, caso o navegador bloqueie o popup)
+    window.open(destino, "_blank");
   }
 
   // clique numa opção
