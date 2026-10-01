@@ -2328,11 +2328,11 @@ document.querySelectorAll('.urgent-card, .service-block, .testimonial-card, .sta
 
     // qualificado
     var urgente = resp.some(function(r){ return r.urgente; });
-    if(typeof dataLayer !== 'undefined'){ dataLayer.push({event:'lead_qualificado'}); }
+    if(typeof dataLayer !== 'undefined'){ dataLayer.push({event:'lead_qualificado', origem:'atendimento'}); }
     pixel("Lead", { content_name: urgente ? "Qualificado urgente" : "Qualificado" });
 
     var linhas = [
-      "Oi, vim pelo site.",
+      "Fiz a triagem – Oi, vim pelo site.",
       "",
       "Situação: " + resp[0].val,
       "Advogado: " + resp[1].val

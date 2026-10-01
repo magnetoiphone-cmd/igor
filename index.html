@@ -2164,13 +2164,15 @@ function trackWhatsApp(location) {
     // 2. Envia pro CAPI (server-side) — mesmo event_id pra deduplicar
     sendCAPI('Lead', eventId);
 
-    // 3. Google Ads — conversão "WhatsApp - Clique Site" (conta AW-390295009)
+    // 2.1 Sinal unificado pro GTM — mesmo evento usado no /atendimento,
+    // com origem:'home' para diferenciar no Google Ads (AJUSTE 1 — pedido do Magno em 01/10)
+    if (typeof dataLayer !== 'undefined') {
+        dataLayer.push({ event: 'lead_qualificado', origem: 'home' });
+    }
+
+    // 3. Google Ads — a CONVERSÃO agora é disparada SOMENTE pelo GTM (acionador "CE – lead_qualificado").
+    //    O gtag('event','conversion') direto foi removido para não contar em dobro (código + GTM).
     if (typeof gtag !== 'undefined') {
-        gtag('event', 'conversion', {
-            'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
-            'value': 1.0,
-            'currency': 'BRL'
-        });
         gtag('event', 'whatsapp_click', {
             'event_category': 'engagement',
             'event_label': location + ' | origem: ' + (window.__origemVisita || 'site')
@@ -2295,17 +2297,10 @@ document.getElementById('contatoForm').addEventListener('submit', async function
             sendCAPI('Lead', eventId);
         }
         
-        // 3. Disparar conversão no Google Ads (via dataLayer pro GTM)
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
-                'transaction_id': eventId,
-                'value': 1.0,
-                'currency': 'BRL'
-            });
-        }
-        
+        // 3. Google Ads — conversão via GTM (mesmo sinal unificado do WhatsApp).
+        //    O gtag('event','conversion') direto foi removido para não contar em dobro.
         if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({ event: 'lead_qualificado', origem: 'home_formulario' });
             dataLayer.push({
                 'event': 'form_submission',
                 'form_type': 'contact_form',
