@@ -1527,9 +1527,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="hero-location"><i class="fas fa-map-marker-alt"></i> Boa Vista – Roraima</div>
 
-        <h1>Advogado Criminalista em <span>Boa Vista/RR</span></h1>
+        <h1 id="heroTitulo">Advogado Criminalista em <span>Boa Vista/RR</span></h1>
 
-        <p class="hero-services-list">
+        <p class="hero-services-list" id="heroTexto">
             Defesa criminal estratégica em <strong>prisões, inquéritos, ações penais, audiências, habeas corpus, recursos, revisão criminal, execução penal</strong> e <strong>tribunais superiores</strong>.<br><br>
             Atuação também especializada em processos de <strong>tráfico de drogas, busca ilegal, abordagem policial</strong> e <strong>nulidades criminais</strong>.
         </p>
@@ -1538,7 +1538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="https://api.whatsapp.com/send?phone=559581141718&text=Oi,%20vi%20seu%20site%20e%20preciso%20de%20ajuda%20de%20um%20advogado%20criminalista"
                class="btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp('hero')">
                 <i class="fab fa-whatsapp"></i>
-                Falar com advogado criminalista agora
+                <span id="heroBotao">Falar com advogado criminalista agora</span>
             </a>
             <a href="#servicos" class="btn-secondary">
                 <i class="fas fa-arrow-down"></i>
@@ -2080,7 +2080,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </li>
                     <li>
                         <i class="fab fa-whatsapp"></i>
-                        <a href="https://api.whatsapp.com/send?phone=559581141718" target="_blank" rel="noopener">WhatsApp 24h</a>
+                        <a href="https://api.whatsapp.com/send?phone=559581141718" target="_blank" rel="noopener" onclick="trackWhatsApp('footer')">WhatsApp 24h</a>
                     </li>
                 </ul>
             </div>
@@ -2098,7 +2098,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="https://www.instagram.com/igorlyniker.adv/" target="_blank" rel="noopener" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=559581141718" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <a href="https://api.whatsapp.com/send?phone=559581141718" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="trackWhatsApp('footer-social')">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -2170,9 +2170,16 @@ function trackWhatsApp(location) {
         dataLayer.push({ event: 'lead_qualificado', origem: 'home' });
     }
 
-    // 3. Google Ads — a CONVERSÃO agora é disparada SOMENTE pelo GTM (acionador "CE – lead_qualificado").
-    //    O gtag('event','conversion') direto foi removido para não contar em dobro (código + GTM).
+    // 3. Google Ads — conversão "WhatsApp - Clique Site" disparada DIRETO pelo gtag.
+    //    Reativada em 18/10/2026: desde 01/10 (quando ficou só no GTM) nenhuma conversão foi registrada.
+    //    A ação conta "Uma conversão" por clique no anúncio, então um eventual disparo duplo do GTM não infla o número.
     if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
+            'value': 1.0,
+            'currency': 'BRL',
+            'transaction_id': eventId
+        });
         gtag('event', 'whatsapp_click', {
             'event_category': 'engagement',
             'event_label': location + ' | origem: ' + (window.__origemVisita || 'site')
@@ -2297,8 +2304,15 @@ document.getElementById('contatoForm').addEventListener('submit', async function
             sendCAPI('Lead', eventId);
         }
         
-        // 3. Google Ads — conversão via GTM (mesmo sinal unificado do WhatsApp).
-        //    O gtag('event','conversion') direto foi removido para não contar em dobro.
+        // 3. Google Ads — conversão direta (reativada em 18/10/2026) + sinal para o GTM.
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-390295009/XmTtCJSUw4AdEOHbjboB',
+                'value': 1.0,
+                'currency': 'BRL',
+                'transaction_id': eventId
+            });
+        }
         if (typeof dataLayer !== 'undefined') {
             dataLayer.push({ event: 'lead_qualificado', origem: 'home_formulario' });
             dataLayer.push({
@@ -2352,6 +2366,49 @@ window.addEventListener('pageshow', function(event) {
 </script>
 
 
+<!-- ===== VARIAÇÕES DE TOPO PARA ANÚNCIOS DO GOOGLE (?tema=flagrante | liberdade | trafico) =====
+     Sem o parâmetro, a página fica exatamente como sempre foi. -->
+<script>
+(function(){
+  var TEMAS = {
+    flagrante: {
+      titulo: 'Familiar preso em flagrante em <span>Boa Vista/RR?</span>',
+      texto: 'As primeiras horas depois da prisão são decisivas. Atuação na <strong>delegacia</strong>, na <strong>audiência de custódia</strong> e no <strong>pedido de liberdade</strong>.<br><br>Atendimento criminal <strong>24 horas</strong>, inclusive fins de semana e feriados.',
+      botao: 'Falar agora com o advogado',
+      msg: 'prisão em flagrante'
+    },
+    liberdade: {
+      titulo: 'Prisão preventiva? Entenda o caminho para pedir a <span>liberdade</span>',
+      texto: 'Análise técnica da legalidade da prisão e atuação em <strong>habeas corpus</strong>, <strong>liberdade provisória</strong>, <strong>revogação da preventiva</strong> e <strong>relaxamento de prisão ilegal</strong>, em Roraima e nos tribunais superiores (STJ e STF).',
+      botao: 'Falar agora com o advogado',
+      msg: 'pedido de liberdade / habeas corpus'
+    },
+    trafico: {
+      titulo: 'Acusado de tráfico de drogas em <span>Roraima?</span>',
+      texto: 'Defesa técnica na Lei de Drogas: <strong>nulidade de busca pessoal, veicular e domiciliar</strong> sem fundada suspeita, <strong>tráfico privilegiado</strong> e <strong>desclassificação para uso</strong>.<br><br>Cada detalhe da abordagem policial pode mudar o rumo do processo.',
+      botao: 'Falar agora com o advogado',
+      msg: 'processo de tráfico de drogas'
+    }
+  };
+  var tema = (new URLSearchParams(window.location.search).get('tema') || '').toLowerCase();
+  try {
+    if (TEMAS[tema]) sessionStorage.setItem('tema_visita', tema);
+    else tema = sessionStorage.getItem('tema_visita') || '';
+  } catch(e) {}
+  var t = TEMAS[tema];
+  if (!t) return;
+  window.__temaVisita = t.msg;
+  function aplicar(){
+    var h = document.getElementById('heroTitulo'), p = document.getElementById('heroTexto'), b = document.getElementById('heroBotao');
+    if (h) h.innerHTML = t.titulo;
+    if (p) p.innerHTML = t.texto;
+    if (b) b.textContent = t.botao;
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', aplicar);
+  else aplicar();
+})();
+</script>
+
 <!-- ===== ORIGEM DA VISITA NA MENSAGEM DO WHATSAPP =====
      Identifica se o visitante veio de anúncio do Meta (fbclid / utm_source),
      do Google Ads (gclid / gbraid / wbraid), do Instagram orgânico ou do Google orgânico,
@@ -2386,6 +2443,9 @@ window.addEventListener('pageshow', function(event) {
 
   function textoPara(textoAtual){
     var t = textoAtual || '';
+    if (window.__temaVisita) {
+      return 'Oi, ' + o.frase + ' e preciso de ajuda com ' + window.__temaVisita;
+    }
     if (/URGENTE/i.test(t)) {
       return 'Oi, tenho um caso URGENTE, preciso de um advogado criminalista (' + o.frase + ')';
     }
