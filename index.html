@@ -2131,19 +2131,33 @@ function getFbCookie(name) {
     return null;
 }
 
+// === fbc: usa o cookie _fbc ou reconstrói a partir do fbclid do anúncio ===
+function getFbc() {
+    const c = getFbCookie('_fbc');
+    if (c) return c;
+    try {
+        const fbclid = new URLSearchParams(window.location.search).get('fbclid') || sessionStorage.getItem('fbclid');
+        if (fbclid) return `fb.1.${Date.now()}.${fbclid}`;
+    } catch (e) {}
+    return null;
+}
+
 // === Enviar evento pro CAPI (server-side) ===
-async function sendCAPI(eventName, eventId) {
+// userData (opcional): { phone, name } — o servidor faz o hash SHA-256 antes de enviar ao Meta
+async function sendCAPI(eventName, eventId, userData) {
     try {
         await fetch('/api/capi', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            keepalive: true, // garante o envio mesmo quando o clique abre o WhatsApp
             body: JSON.stringify({
                 eventName: eventName,
                 eventId: eventId,
                 sourceUrl: window.location.href,
                 userAgent: navigator.userAgent,
                 fbp: getFbCookie('_fbp'),
-                fbc: getFbCookie('_fbc'),
+                fbc: getFbc(),
+                ...(userData || {}),
             }),
         });
     } catch (err) {
@@ -2152,17 +2166,24 @@ async function sendCAPI(eventName, eventId) {
 }
 
 // === Tracking WhatsApp ===
+// MEDIÇÃO META (21/10/2026): clique no WhatsApp = "Contact", no máximo 1 por visitante/sessão.
+// "Lead" fica reservado ao envio do formulário (contato real com nome + telefone).
 function trackWhatsApp(location) {
-    // Event ID único para deduplicação (importante!)
+    // Event ID único para deduplicação Pixel x CAPI
     const eventId = `wa_${location}_${Date.now()}_${Math.random().toString(36).substring(7)}`;
 
-    // 1. Envia pro Pixel (client-side)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact', { source: location }, { eventID: eventId });
-        fbq('track', 'Lead', { source: location }, { eventID: eventId });
+    let jaContou = false;
+    try { jaContou = sessionStorage.getItem('meta_contact_enviado') === '1'; } catch (e) {}
+
+    if (!jaContou) {
+        try { sessionStorage.setItem('meta_contact_enviado', '1'); } catch (e) {}
+        // 1. Pixel (client-side)
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact', { source: location, origem: window.__origemVisita || 'site' }, { eventID: eventId });
+        }
+        // 2. CAPI (server-side) — mesmo event_id para o Meta deduplicar
+        sendCAPI('Contact', eventId);
     }
-    // 2. Envia pro CAPI (server-side) — mesmo event_id pra deduplicar
-    sendCAPI('Lead', eventId);
 
     // 2.1 Sinal unificado pro GTM — mesmo evento usado no /atendimento,
     // com origem:'home' para diferenciar no Google Ads (AJUSTE 1 — pedido do Magno em 01/10)
@@ -2301,7 +2322,8 @@ document.getElementById('contatoForm').addEventListener('submit', async function
         }
         
         if (typeof sendCAPI === 'function') {
-            sendCAPI('Lead', eventId);
+            // Envia nome e telefone para melhorar a correspondência (hash feito no servidor)
+            sendCAPI('Lead', eventId, { phone: whatsapp, name: nome });
         }
         
         // 3. Google Ads — conversão direta (reativada em 18/10/2026) + sinal para o GTM.
